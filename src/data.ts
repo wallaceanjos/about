@@ -1,12 +1,12 @@
 import { Project, Skill, TimelineEvent, SocialLink } from './types';
 
 export const personalInfo = {
-  name: "Wallace Anjos",
-  title: "Designer de Identidade Visual & Desenvolvedor Front-End",
-  bio: "Especialista em unir a expressividade artística do design gráfico tradicional com a precisão matemática do desenvolvimento front-end moderno. Sob a marca 'Los Anjos', crio sistemas de design marcantes, identidades visuais memoráveis e interfaces web de alta performance com interações e animações fluidas.",
+  name: "Wallace dos Anjos",
+  title: "Front-end Engineer & UI Specialist",
+  bio: "Sou Wallace dos Anjos. Trabalho com desenvolvimento e design desde 2009, mas hoje me dedico principalmente a soluções de aplicações web híbridas: front-ends performáticos, design systems e UI kits que escalam em produto. Founder da Los Anjos, atendo empresas como profissional solo — a minha formação em identidade visual garante interfaces com alta sensibilidade estética, e minha experiência técnica garante execução robusta e escalável.",
   location: "Brasil",
   email: "wallace2anjos@gmail.com",
-  experienceYears: 6,
+  experienceYears: 15,
   projectsCount: 42,
   coffeeCups: 1250,
   happyClients: 35
@@ -140,9 +140,9 @@ export const projects: Project[] = [
 ];
 
 export const socialLinks: SocialLink[] = [
-  { platform: "GitHub", url: "https://github.com", icon: "Github" },
-  { platform: "LinkedIn", url: "https://linkedin.com", icon: "Linkedin" },
-  { platform: "Behance", url: "https://behance.net", icon: "Palette" },
-  { platform: "Instagram", url: "https://instagram.com", icon: "Instagram" },
+  { platform: "GitHub", url: "https://github.com/wallaceanjos/", icon: "Github" },
+  { platform: "LinkedIn", url: "https://www.linkedin.com/in/wallace-dos-anjos/", icon: "Linkedin" },
+  { platform: "Behance", url: "https://www.behance.net/wallace2anjos", icon: "Palette" },
+  { platform: "Instagram", url: "https://www.instagram.com/wallacelosanjos/", icon: "Instagram" },
   { platform: "Email", url: "mailto:wallace2anjos@gmail.com", icon: "Mail" }
 ];
