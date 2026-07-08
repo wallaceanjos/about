@@ -648,17 +648,17 @@ export default function App() {
               Filosofia & Conceito
             </span>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-              A elegância clássica unida ao código moderno.
+              Arquitetura de Elite, Design de Alta Conversão.
             </h2>
             <div className="space-y-4 text-white/70 text-sm md:text-base leading-relaxed">
               <p>
-                Meu trabalho como profissional híbrido é quebrar o paradigma de que designers não sabem codificar e programadores não possuem refinamento visual. Cada pixel de identidade visual gótica ou corporativa que eu desenho no Illustrator é traduzido com exatidão matemática para componentes React altamente performáticos e estilizados via Tailwind CSS.
+                Meu trabalho como desenvolvedor focado em interfaces é entregar soluções onde a estética e a engenharia caminham juntas. A disciplina técnica que absorvi desenvolvendo em Angular me ensinou a projetar componentes com organização militar. Isso garante que, mesmo nas aplicações mais complexas e fluidas feitas em React e Tailwind CSS, o código permaneça limpo, escalável e blindado contra desorganização estrutural.
               </p>
               <p>
-                A marca <strong className="text-white">Los Anjos</strong> representa essa dualidade indissociável. Eu entendo as limitações e potencialidades do navegador, o que me permite criar animações de tela incrivelmente fluidas com <span className="text-white">Motion</span> e construir interfaces responsivas que mantêm o rigor editorial de um livro impresso.
+                Não sou o profissional que apenas "tira o design do papel"; sou o engenheiro que garante que sua interface seja esteticamente impecável, mas, acima de tudo, extremamente performática, organizada e fácil de manter.
               </p>
               <p>
-                Seja desenvolvendo um e-commerce interativo completo, codificando uma Landing Page para alta conversão, ou implementando portais robustos sob o ecossistema WordPress CMS com blocos customizados integrados, eu foco na velocidade de carregamento excepcional (Core Web Vitals) e numa estética memorável.
+                Ao contratar a <strong className="text-white">Los Anjos</strong>, você não está apenas comprando código ou design — você está garantindo uma aplicação robusta que une estética e funcionalidade de ponta a ponta.
               </p>
             </div>
 
@@ -1085,7 +1085,7 @@ export default function App() {
                 Vamos iniciar um projeto juntos.
               </h2>
               <p className="text-white/60 text-sm leading-relaxed">
-                Você precisa de uma identidade de marca marcante ou de uma aplicação front-end de alta performance? Entre em contato e preencha o formulário para compilar sua proposta automaticamente no seu e-mail.
+                Você precisa de uma aplicação web de alta performance que una rigor arquitetônico e design impecável? Como profissional solo, atuo com foco em qualidade e entrega estratégica. Entre em contato e preencha o formulário para discutirmos a viabilidade técnica e a visão do seu produto.
               </p>
             </div>
 

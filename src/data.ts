@@ -1,12 +1,12 @@
 import { Project, Skill, TimelineEvent, SocialLink } from './types';
 
 export const personalInfo = {
-  name: "Wallace Anjos",
-  title: "Designer de Identidade Visual & Desenvolvedor Front-End",
-  bio: "Especialista em unir a expressividade artística do design gráfico tradicional com a precisão matemática do desenvolvimento front-end moderno. Sob a marca 'Los Anjos', crio sistemas de design marcantes, identidades visuais memoráveis e interfaces web de alta performance com interações e animações fluidas.",
+  name: "Wallace dos Anjos",
+  title: "Front-end Engineer & UI Specialist",
+  bio: "Sou Wallace dos Anjos. Com uma trajetória iniciada em 2009, hoje me dedico à engenharia de aplicações web híbridas e sistemas escaláveis. Meu grande diferencial é a integração profunda entre UI e engenharia de software: não apenas implemento interfaces, eu as concebo com rigor técnico. A experiência na construção de Design Systems complexos em Angular forjou minha visão arquitetônica, permitindo-me estruturar projetos robustos em React e Next.js com extrema organização e clareza. Como founder da Los Anjos, ajudo empresas a transformar visões em produtos digitais performáticos, onde a sensibilidade estética de um designer garante a usabilidade, e o rigor técnico garante a estabilidade e a longevidade do código.",
   location: "Brasil",
   email: "wallace2anjos@gmail.com",
-  experienceYears: 6,
+  experienceYears: 15,
   projectsCount: 42,
   coffeeCups: 1250,
   happyClients: 35
@@ -140,9 +140,9 @@ export const projects: Project[] = [
 ];
 
 export const socialLinks: SocialLink[] = [
-  { platform: "GitHub", url: "https://github.com", icon: "Github" },
-  { platform: "LinkedIn", url: "https://linkedin.com", icon: "Linkedin" },
-  { platform: "Behance", url: "https://behance.net", icon: "Palette" },
-  { platform: "Instagram", url: "https://instagram.com", icon: "Instagram" },
+  { platform: "GitHub", url: "https://github.com/wallaceanjos/", icon: "Github" },
+  { platform: "LinkedIn", url: "https://www.linkedin.com/in/wallace-dos-anjos/", icon: "Linkedin" },
+  { platform: "Behance", url: "https://www.behance.net/wallace2anjos", icon: "Palette" },
+  { platform: "Instagram", url: "https://www.instagram.com/wallacelosanjos/", icon: "Instagram" },
   { platform: "Email", url: "mailto:wallace2anjos@gmail.com", icon: "Mail" }
 ];
