@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.9.4, SVG Export Plug-In . SVG Version: 9.03 Build 54784)  -->
+<svg version="1.1" id="Layer_1" class="svg-stroke-animate" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill: none;
+        stroke: #fad000;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;}
+        
+        .svg-stroke-animate {
+        opacity: 1;
+        margin-top: 5%;
+        width: 30%;
+        stroke-dasharray: 800;
+        stroke-dashoffset: 0;
+        animation: 
+          dash 12s ease-in-out;
+      }
+      @keyframes dash {
+        0% {
+          opacity: 0;
+          stroke-dashoffset: 0;
+          stroke-dasharray:   0;
+        }
+        15%{
+          opacity: 1;
+        }
+        30%{
+          stroke-dashoffset: 10;
+        }
+        50% {
+          stroke-dashoffset: 0;
+          stroke-dasharray: 800;
+        }
+        50.5% {opacity: 1;}
+        51% {opacity: 1;}
+        51.5% {opacity: 0;}
+        52% {opacity: 1;}
+        52.5% {opacity: 0;}
+        53% {opacity: 1;}
+        100% {opacity: 1;}
+      }
+</style>
+<g>
+  <path class="st0" d="M219.12,40.15v183.97h-45.73v45.73l-92.52-45.2V40.15h138.24ZM204.77,54.51h-95.18l63.81,31.9v123.36h30.84l.53-155.26ZM158.51,94.92l-63.27-32.43v147.28h63.27v-114.85ZM158.51,224.12h-47.32l47.32,22.86v-22.86Z"/>
+</g>
+</svg>
+
+
+
+
+
