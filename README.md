@@ -1,3 +1,5 @@
-<div align="center">
-<img width="1200" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Sobre mim
+
+Olá! Eu sou uma pessoa apaixonada por tecnologia, criatividade e por transformar ideias em projetos. Tenho interesse em desenvolvimento, design e em criar experiências que sejam úteis e impactantes.
+
+Este projeto representa um pouco da minha identidade e do meu trabalho.
