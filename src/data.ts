@@ -2,8 +2,10 @@ import { Project, Skill, TimelineEvent, SocialLink } from './types';
 
 export const personalInfo = {
   name: "Wallace dos Anjos",
-  title: "Front-end Engineer & UI Specialist",
-  bio: "Sou Wallace dos Anjos. Trabalho com desenvolvimento e design desde 2009, mas hoje me dedico principalmente a soluções de aplicações web híbridas: front-ends performáticos, design systems e UI kits que escalam em produto. Founder da Los Anjos, atendo empresas como profissional solo — a minha formação em identidade visual garante interfaces com alta sensibilidade estética, e minha experiência técnica garante execução robusta e escalável.",
+  title: "Web Application Developer & UI Specialist",
+  tagline: "Engenharia Front-End de elite com a precisão estética de um designer.",
+  bio: "Sou Wallace dos Anjos. Com uma trajetória iniciada em 2009, hoje me dedico à engenharia de aplicações web híbridas e sistemas escaláveis. Meu grande diferencial é a integração profunda entre UI e engenharia de software: não apenas implemento interfaces, eu as concebo com rigor técnico. A experiência na construção de Design Systems complexos em Angular forjou minha visão arquitetônica, permitindo-me estruturar projetos robustos em React e Next.js com extrema organização e clareza. Como founder da Los Anjos, ajudo empresas a transformar visões em produtos digitais performáticos, onde a sensibilidade estética de um designer garante a usabilidade, e o rigor técnico garante a estabilidade e a longevidade do código.",
+  philosophy: "Arquitetura de Elite, Design de Alta Conversão. Meu trabalho como desenvolvedor focado em interfaces é entregar soluções onde a estética e a engenharia caminham juntas. A disciplina técnica que absorvi desenvolvendo em Angular me ensinou a projetar componentes com organização militar. Isso garante que, mesmo nas aplicações mais complexas e fluidas feitas em React e Tailwind CSS, o código permaneça limpo, escalável e blindado contra desorganização estrutural.",
   location: "Brasil",
   email: "wallace2anjos@gmail.com",
   experienceYears: 15,
@@ -13,25 +15,19 @@ export const personalInfo = {
 };
 
 export const skills: Skill[] = [
-  // Design & Visual Identity
-  { name: "Identidade Visual & Branding", level: 95, category: "design" },
-  { name: "Tipografia & Composição", level: 90, category: "design" },
-  { name: "Adobe Illustrator & Photoshop", level: 92, category: "design" },
-  { name: "Figma (UI/UX Systems)", level: 88, category: "design" },
-  { name: "Direção de Arte", level: 85, category: "design" },
-
-  // Front-End Dev
+  // Desenvolvimento & Arquitetura
   { name: "React & Next.js", level: 90, category: "dev" },
+  { name: "Angular (Arquitetura & Design Systems)", level: 85, category: "dev" },
   { name: "TypeScript & ES6+", level: 85, category: "dev" },
   { name: "Tailwind CSS & SASS", level: 95, category: "dev" },
-  { name: "Framer Motion (Animações)", level: 90, category: "dev" },
   { name: "Performance Web & Core Web Vitals", level: 88, category: "dev" },
+  { name: "Git & GitHub (Workflow & Deployment)", level: 90, category: "dev" },
 
-  // CMS & Integration
-  { name: "WordPress (Custom Themes)", level: 85, category: "cms" },
-  { name: "Gutenberg Block Development", level: 80, category: "cms" },
-  { name: "SEO Técnico", level: 82, category: "cms" },
-  { name: "Git & GitHub Pages", level: 90, category: "cms" },
+  // Design & Estratégia de Interface
+  { name: "UI/UX & Design Systems", level: 92, category: "design" },
+  { name: "Tipografia & Composição", level: 90, category: "design" },
+  { name: "Figma & Adobe Suite", level: 90, category: "design" },
+  { name: "Direção de Arte & Branding", level: 85, category: "design" }
 ];
 
 export const timeline: TimelineEvent[] = [
