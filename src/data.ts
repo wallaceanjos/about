@@ -96,7 +96,7 @@ export const projects: Project[] = [
     subtype: "Direção de Arte & Posters",
     techStack: ["Photoshop", "Camera Raw", "Digital Art", "Lightroom"],
     imageUrl: "neontwilight",
-    details: "Uma fusão poética de gradientes violeta, rosa e âmbar, simulando o brilho misterioso do crepúsculo. A série de artes utiliza efeitos finos de granulação analógica, aberração cromática e tipografia gótica adaptada para criar uma ponte memorável entre o retrô de vanguarda e o design moderno.",
+    details: "Uma fusão poética de gradientes violeta, rosa e âmbar, simulando o brilho misterioso do crepúsculo. A série de artes utiliza efeitos finos de granulação analógica, aberração cromática e tipografia moderna adaptada para criar uma ponte memorável entre o retrô de vanguarda e o design moderno.",
     featured: true,
     behanceUrl: "#"
   },

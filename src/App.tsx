@@ -1212,7 +1212,7 @@ export default function App() {
                     rows={4}
                     value={contactMsg}
                     onChange={(e) => setContactMsg(e.target.value)}
-                    placeholder="Ex: Preciso de uma logo gótica elegante para minha marca e uma landing page no React com animações premium..."
+                    placeholder="Ex: Preciso de uma logo moderna e elegante para minha marca e uma landing page no React com animações premium..."
                     className="w-full bg-[#0A0A10]/60 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-violet transition-colors placeholder:text-white/20 resize-none leading-relaxed"
                   />
                 </div>
