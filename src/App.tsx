@@ -1275,7 +1275,7 @@ export default function App() {
           </div>
 
           <p className="text-white/40 text-xs font-mono uppercase tracking-widest">
-            © 2026 LOS ANJOS • CONSTRUIDO COM REACT & TAILWIND CSS
+            © 2026 LOS ANJOS • Jesus Saves But Wallace Codes x]~ • Todos os direitos reservados
           </p>
 
           <div className="flex items-center gap-4 text-xs font-mono">
