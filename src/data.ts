@@ -3,9 +3,10 @@ import { Project, Skill, TimelineEvent, SocialLink } from './types';
 export const personalInfo = {
   name: "Wallace dos Anjos",
   title: "Front-end Engineer & UI Specialist",
-  bio: "Sou Wallace dos Anjos. Com uma trajetória iniciada em 2009, hoje me dedico à engenharia de aplicações web híbridas e sistemas escaláveis. Meu grande diferencial é a integração profunda entre UI e engenharia de software: não apenas implemento interfaces, eu as concebo com rigor técnico. A experiência na construção de Design Systems complexos em Angular forjou minha visão arquitetônica, permitindo-me estruturar projetos robustos em React e Next.js com extrema organização e clareza. Como founder da Los Anjos, ajudo empresas a transformar visões em produtos digitais performáticos, onde a sensibilidade estética de um designer garante a usabilidade, e o rigor técnico garante a estabilidade e a longevidade do código.",
+  bio: "Como founder da Los Anjos, ajudo empresas a transformar visões em produtos digitais performáticos, onde a sensibilidade estética de um designer garante a usabilidade, e o rigor técnico garante a estabilidade e a longevidade do código.",
   location: "Brasil",
   email: "wallace2anjos@gmail.com",
+  whatsapp: "5521998886888", // Substitua pelo seu número no formato internacional, ex: "5511999999999"
   experienceYears: 15,
   projectsCount: 42,
   coffeeCups: 1250,

@@ -59,15 +59,17 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Quick action: send email
+  // Quick action: open WhatsApp with the message ready to a configured recipient
   const handleContactSubmit = (e: FormEvent) => {
     e.preventDefault();
     setFormSubmitted(true);
     setTimeout(() => {
-      // Trigger user's mail app pre-populated
-      const subject = encodeURIComponent(`Contato Portfólio: ${contactType.toUpperCase()}`);
       const body = encodeURIComponent(`Olá Wallace,\n\nMeu nome é ${contactName}.\n\n${contactMsg}\n\nAtenciosamente,\n${contactName}`);
-      window.location.href = `mailto:wallace2anjos@gmail.com?subject=${subject}&body=${body}`;
+      const whatsappNumber = personalInfo.whatsapp?.replace(/\D/g, '');
+      const whatsappUrl = whatsappNumber
+        ? `https://wa.me/${whatsappNumber}?text=${body}`
+        : `https://wa.me/?text=${body}`;
+      window.location.href = whatsappUrl;
       
       // Reset state
       setContactName('');
@@ -652,13 +654,10 @@ export default function App() {
             </h2>
             <div className="space-y-4 text-white/70 text-sm md:text-base leading-relaxed">
               <p>
-                Meu trabalho como desenvolvedor focado em interfaces é entregar soluções onde a estética e a engenharia caminham juntas. A disciplina técnica que absorvi desenvolvendo em Angular me ensinou a projetar componentes com organização militar. Isso garante que, mesmo nas aplicações mais complexas e fluidas feitas em React e Tailwind CSS, o código permaneça limpo, escalável e blindado contra desorganização estrutural.
+                Sou Wallace dos Anjos. Com trajetória desde 2009, hoje me dedico à engenharia de aplicações web e sistemas escaláveis. Meu diferencial é a integração profunda entre UI e código: a experiência na construção de Design Systems complexos em Angular forjou uma visão arquitetônica que aplico ao React e Next.js, garantindo projetos robustos, organizados e performáticos.
               </p>
               <p>
-                Não sou o profissional que apenas "tira o design do papel"; sou o engenheiro que garante que sua interface seja esteticamente impecável, mas, acima de tudo, extremamente performática, organizada e fácil de manter.
-              </p>
-              <p>
-                Ao contratar a <strong className="text-white">Los Anjos</strong>, você não está apenas comprando código ou design — você está garantindo uma aplicação robusta que une estética e funcionalidade de ponta a ponta.
+                Não apenas "tiro o design do papel"; entrego interfaces esteticamente impecáveis e tecnicamente blindadas contra desorganização estrutural. Ao contratar a <strong className="text-white">Los Anjos</strong>, você garante uma aplicação de ponta a ponta que une alta fidelidade visual e engenharia de software de elite.
               </p>
             </div>
 
