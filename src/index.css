@@ -1,76 +1,87 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=UnifrakturCook:wght@700&family=Germania+One&family=Pirata+One&family=JetBrains+Mono:wght@400;500;600&family=Manufacturing+Consent&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600&family=Poppins:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
 @import "tailwindcss";
 
+/* Identidade do The System: preto absoluto + violeta, Anton nos títulos, Oswald nos rótulos. */
 @theme {
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-gothic: "Manufacturing Consent", system-ui;
-  --font-mono: "JetBrains Mono", monospace;
-  
-  --color-brand-gold: #FACC15;
-  --color-brand-gold-hover: #EAB308;
-  --color-brand-violet: #8B5CF6;
-  --color-brand-violet-hover: #7C3AED;
-  --color-brand-navy: #0A0A0A;
-  --color-brand-card: #141414;
+  --font-display: "Anton", Impact, sans-serif;
+  --font-label: "Oswald", sans-serif;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+
+  --color-ink: #f5f3fa;
+  --color-mute: #b4adc4;
+  --color-violet: #7a3bff;
+  --color-violet-soft: #9d6bff;
+  --color-card: #0d0b14;
+  --color-line: #2a2440;
+  --color-gold: #e8c46a;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+:root {
+  color-scheme: dark;
+  background: #000;
 }
 
-::-webkit-scrollbar-track {
-  background: #0A0A0A;
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(60rem 40rem at 50% -10rem, rgba(122, 59, 255, 0.28), transparent 70%),
+    radial-gradient(40rem 30rem at 100% 100%, rgba(122, 59, 255, 0.12), transparent 70%),
+    #000;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #222222;
-  border-radius: 4px;
+/* Grade fina ao fundo, como a janela do Sistema. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(180deg, black, transparent 75%);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #333333;
+/* Janela HUD: cantos superior-esquerdo e inferior-direito chanfrados; a borda é o fundo do .hud-frame. */
+.hud {
+  --cut: 22px;
+  clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
+}
+.hud-frame {
+  padding: 2px;
+  background: linear-gradient(135deg, var(--color-violet), rgba(122, 59, 255, 0.22) 45%, var(--color-violet));
+}
+.hud-frame-muted {
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(232, 196, 106, 0.7), rgba(255, 255, 255, 0.08) 45%, rgba(232, 196, 106, 0.5));
+}
+.hud-frame > .hud,
+.hud-frame-muted > .hud {
+  --cut: 21px;
 }
 
-/* Glassmorphism utility classes matching the Elegant Dark theme */
-.glass-panel {
-  background: rgba(20, 20, 20, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+.highlight {
+  background: linear-gradient(transparent 68%, var(--color-violet) 68%, var(--color-violet) 94%, transparent 94%);
+  padding: 0 4px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
-.glass-panel-gold {
-  background: rgba(20, 20, 20, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(250, 204, 21, 0.15);
+:focus-visible {
+  outline: 3px solid var(--color-violet-soft);
+  outline-offset: 3px;
 }
 
-.glass-panel-violet {
-  background: rgba(20, 20, 20, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(139, 92, 246, 0.15);
-}
-
-/* Background grain animation inspired by the user's images and theme */
-.bg-grain {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
-}
-
-/* Neon glow classes updated to be more elegant and muted */
-.glow-gold {
-  box-shadow: 0 0 25px rgba(250, 204, 21, 0.1);
-}
-
-.glow-violet {
-  box-shadow: 0 0 25px rgba(139, 92, 246, 0.1);
-}
-
-/* Utility to hide scrollbar but keep functionality */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
