@@ -78,39 +78,41 @@ function TheSystemCard() {
   return (
     <section aria-labelledby="the-system" className="hud-frame hud shadow-[0_0_60px_rgba(122,59,255,0.35)]">
       <div className="hud relative overflow-hidden bg-card">
-        <div className="relative h-72 overflow-hidden bg-[radial-gradient(circle_at_70%_30%,rgba(122,59,255,0.45),transparent_60%)]">
+        {/* Imagem baixa de propósito: os botões de download precisam caber na primeira dobra,
+            inclusive no navegador do Instagram (~650 px visíveis). */}
+        <div className="relative h-44 overflow-hidden bg-[radial-gradient(circle_at_70%_30%,rgba(122,59,255,0.45),transparent_60%)]">
           <img
             src={asset('img/the-system-app.webp')}
             alt="Tela de progresso do The System, com sequência de dias e o mapa de atividade de cada pilar"
-            className="absolute right-5 top-6 w-40 rotate-[6deg] rounded-[22px] border-2 border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.7)]"
+            className="absolute right-6 top-4 w-28 rotate-[6deg] rounded-[18px] border-2 border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.7)]"
             loading="eager"
           />
           <img
             src={asset('img/mascote.webp')}
             alt=""
             aria-hidden="true"
-            className="absolute -bottom-2 left-1 h-64 drop-shadow-[0_18px_30px_rgba(0,0,0,0.75)]"
+            className="absolute -bottom-2 left-2 h-44 drop-shadow-[0_18px_30px_rgba(0,0,0,0.75)]"
           />
-          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-card to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-card to-transparent" />
         </div>
 
-        <div className="space-y-4 px-5 pb-6 pt-2">
+        <div className="space-y-3.5 px-5 pb-6 pt-1">
           <div className="flex items-center gap-2">
             <StatusDot live />
             <Label>Projeto em destaque ♦ {THE_SYSTEM.status}</Label>
           </div>
           <div className="flex items-center gap-3">
-            <img src={asset('img/the-system-mark.webp')} alt="" aria-hidden="true" className="size-11" />
-            <h2 id="the-system" className="font-display text-5xl uppercase leading-none tracking-tight">
+            <img src={asset('img/the-system-mark.webp')} alt="" aria-hidden="true" className="size-10" />
+            <h2 id="the-system" className="font-display text-[44px] uppercase leading-none tracking-tight">
               {THE_SYSTEM.name}
             </h2>
           </div>
-          <p className="text-[15px] leading-relaxed text-mute">{THE_SYSTEM.pitch}</p>
-          <div className="space-y-2.5 pt-1">
+          <div className="space-y-2.5">
             {THE_SYSTEM.links.map((link, i) => (
               <StoreButton key={link.label} link={link} primary={i === 0} />
             ))}
           </div>
+          <p className="pt-1 text-[15px] leading-relaxed text-mute">{THE_SYSTEM.pitch}</p>
         </div>
       </div>
     </section>
@@ -168,19 +170,21 @@ function SocialLink({ social }: { social: Social }) {
 
 export default function App() {
   return (
-    <main className="relative mx-auto flex min-h-screen w-full max-w-[460px] flex-col gap-6 px-4 pb-10 pt-10">
+    <main className="relative mx-auto flex min-h-screen w-full max-w-[460px] flex-col gap-5 px-4 pb-10 pt-6">
       <Reveal index={0}>
-        <header className="flex flex-col items-center gap-3 text-center">
+        {/* Cabeçalho numa linha só: deixa a primeira dobra para os botões do The System. */}
+        <header className="flex items-center gap-4">
           <img
             src={asset('img/losanjos-monogram.webp')}
             alt="Monograma L.A da Losanjos Studios"
-            className="w-28 drop-shadow-[0_0_24px_rgba(122,59,255,0.55)]"
+            className="w-20 shrink-0 drop-shadow-[0_0_20px_rgba(122,59,255,0.55)]"
           />
-          <h1 className="font-display text-4xl uppercase tracking-tight">
-            <span className="highlight">{STUDIO.name}</span>
-          </h1>
-          <Label>{STUDIO.owner} ♦ Apps & jogos</Label>
-          <p className="max-w-xs text-[15px] text-mute">{STUDIO.tagline}</p>
+          <div className="min-w-0 space-y-1">
+            <h1 className="font-display text-[28px] uppercase leading-tight tracking-tight">
+              <span className="highlight">{STUDIO.name}</span>
+            </h1>
+            <Label>{STUDIO.owner}</Label>
+          </div>
         </header>
       </Reveal>
 
