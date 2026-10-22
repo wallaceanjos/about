@@ -17,7 +17,7 @@ export const THE_SYSTEM = {
     // O iOS ainda está em revisão na Apple: o botão fica desativado até a aprovação.
     { label: 'App Store', note: 'Em breve', icon: 'apple' },
     { label: 'Abrir na web', href: 'https://the-system-7q6.pages.dev/', icon: 'web' },
-    { label: 'Devlog no Instagram', href: 'https://www.instagram.com/wallacelosanjos/', icon: 'devlog' },
+    { label: 'Devlog no Instagram', href: 'https://www.instagram.com/wallace2anjos/', icon: 'devlog' },
   ] satisfies StoreLink[],
 };
 
@@ -32,7 +32,7 @@ export const ADVENTO = {
 export type Social = { label: string; href: string; icon: 'instagram' | 'linkedin' | 'github' | 'behance' | 'mail' | 'whatsapp' };
 
 export const SOCIALS: Social[] = [
-  { label: 'Instagram', href: 'https://www.instagram.com/wallacelosanjos/', icon: 'instagram' },
+  { label: 'Instagram', href: 'https://www.instagram.com/wallace2anjos/', icon: 'instagram' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/wallace-dos-anjos/', icon: 'linkedin' },
   { label: 'GitHub', href: 'https://github.com/wallaceanjos/', icon: 'github' },
   { label: 'Behance', href: 'https://www.behance.net/wallace2anjos', icon: 'behance' },
