@@ -1,32 +1,30 @@
-// Tudo o que o linktree mostra. Só projetos e links reais da Losanjos Studios.
+// Tudo o que o link da bio mostra. Só projetos e links reais da Losanjos Studios.
 
 export const STUDIO = {
   name: 'Losanjos Studios',
   owner: 'Wallace dos Anjos',
-  tagline: 'Apps e jogos feitos do zero, com propósito.',
 };
 
-export type StoreLink = { label: string; href?: string; note?: string; icon: 'play' | 'apple' | 'web' | 'devlog' };
+export type MenuLink = { label: string; href?: string; note?: string; icon: 'play' | 'apple' | 'web' | 'heart' | 'book' };
 
 export const THE_SYSTEM = {
   name: 'The System',
-  status: 'No ar',
-  pitch: 'Transforma a sua rotina num jogo, igual um RPG: missão do dia, treino, dieta, estudo e o seu nível subindo junto.',
+  pitch: 'Sua rotina vira um RPG.',
   links: [
-    { label: 'Baixar na Google Play', href: 'https://play.google.com/store/apps/details?id=com.thesystem.app', icon: 'play' },
+    { label: 'Android', href: 'https://play.google.com/store/apps/details?id=com.thesystem.app', icon: 'play' },
     // O iOS ainda está em revisão na Apple: o botão fica desativado até a aprovação.
-    { label: 'App Store', note: 'Em breve', icon: 'apple' },
-    { label: 'Abrir na web', href: 'https://the-system-7q6.pages.dev/', icon: 'web' },
-    { label: 'Devlog no Instagram', href: 'https://www.instagram.com/wallace2anjos/', icon: 'devlog' },
-  ] satisfies StoreLink[],
+    { label: 'iOS', note: 'em breve', icon: 'apple' },
+    { label: 'Web', href: 'https://the-system-7q6.pages.dev/', icon: 'web' },
+  ] satisfies MenuLink[],
 };
 
 export const ADVENTO = {
   name: 'Advento',
-  status: 'Em desenvolvimento',
-  pitch: 'Um MMORPG cristão sobre a guerra espiritual invisível. Acompanhe o documento de design do jogo.',
-  href: 'https://wallaceanjos.github.io/advento-journey/',
-  cta: 'Ler o GDD',
+  pitch: 'MMORPG cristão em desenvolvimento',
+  links: [
+    { label: 'Seja um colaborador', href: 'https://www.vakinha.com.br/vaquinha/ajuda-para-criar-um-game-cristao-de-verdade', icon: 'heart' },
+    { label: 'GDD', href: 'https://wallaceanjos.github.io/advento-journey/', icon: 'book' },
+  ] satisfies MenuLink[],
 };
 
 export type Social = { label: string; href: string; icon: 'instagram' | 'linkedin' | 'github' | 'behance' | 'mail' | 'whatsapp' };

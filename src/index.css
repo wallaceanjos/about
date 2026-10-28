@@ -1,20 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600&family=Poppins:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
-/* Identidade do The System: preto absoluto + violeta, Anton nos títulos, Oswald nos rótulos. */
+/* Identidade do The System: preto absoluto + violeta, Anton no nome dos jogos, Poppins no resto. */
 @theme {
   --font-display: "Anton", Impact, sans-serif;
-  --font-label: "Oswald", sans-serif;
   --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Space Mono", ui-monospace, monospace;
 
   --color-ink: #f5f3fa;
   --color-mute: #b4adc4;
   --color-violet: #7a3bff;
   --color-violet-soft: #9d6bff;
   --color-card: #0d0b14;
-  --color-line: #2a2440;
   --color-gold: #e8c46a;
+  --color-gold-soft: #f2d58f;
 }
 
 :root {
@@ -24,52 +22,37 @@
 
 body {
   margin: 0;
-  min-height: 100vh;
-  background:
-    radial-gradient(60rem 40rem at 50% -10rem, rgba(122, 59, 255, 0.28), transparent 70%),
-    radial-gradient(40rem 30rem at 100% 100%, rgba(122, 59, 255, 0.12), transparent 70%),
-    #000;
+  min-height: 100svh;
+  background: #000;
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
 
-/* Grade fina ao fundo, como a janela do Sistema. */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: linear-gradient(180deg, black, transparent 75%);
-}
-
-/* Janela HUD: cantos superior-esquerdo e inferior-direito chanfrados; a borda é o fundo do .hud-frame. */
+/* Janela HUD: cantos superior-esquerdo e inferior-direito chanfrados; a borda é o fundo do .frame-*. */
 .hud {
-  --cut: 22px;
+  --cut: 20px;
   clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
 }
-.hud-frame {
+.frame-violet {
   padding: 2px;
-  background: linear-gradient(135deg, var(--color-violet), rgba(122, 59, 255, 0.22) 45%, var(--color-violet));
+  background: var(--color-violet);
 }
-.hud-frame-muted {
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(232, 196, 106, 0.7), rgba(255, 255, 255, 0.08) 45%, rgba(232, 196, 106, 0.5));
+.frame-gold {
+  padding: 2px;
+  background: var(--color-gold);
 }
-.hud-frame > .hud,
-.hud-frame-muted > .hud {
-  --cut: 21px;
+.frame-violet > .hud,
+.frame-gold > .hud {
+  --cut: 19px;
 }
 
-.highlight {
-  background: linear-gradient(transparent 68%, var(--color-violet) 68%, var(--color-violet) 94%, transparent 94%);
-  padding: 0 4px;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
+/* Resposta ao toque: o botão afunda um pouco ao ser apertado. */
+.press {
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 200ms ease;
+}
+.press:active {
+  transform: scale(0.97);
 }
 
 :focus-visible {

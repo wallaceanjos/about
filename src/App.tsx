@@ -1,24 +1,11 @@
 import type { ReactNode } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
-import {
-  Apple,
-  ArrowUpRight,
-  BookOpen,
-  Clapperboard,
-  Github,
-  Globe,
-  Instagram,
-  Linkedin,
-  Mail,
-  MessageCircle,
-  Palette,
-  Play,
-} from 'lucide-react';
-import { ADVENTO, SOCIALS, STUDIO, THE_SYSTEM, type Social, type StoreLink } from './links';
+import { Apple, BookOpen, Github, Globe, HandHeart, Instagram, Linkedin, Mail, MessageCircle, Palette, Play } from 'lucide-react';
+import { ADVENTO, SOCIALS, STUDIO, THE_SYSTEM, type MenuLink, type Social } from './links';
 
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
-const STORE_ICON = { play: Play, apple: Apple, web: Globe, devlog: Clapperboard } as const;
+const MENU_ICON = { play: Play, apple: Apple, web: Globe, heart: HandHeart, book: BookOpen } as const;
 const SOCIAL_ICON = { instagram: Instagram, linkedin: Linkedin, github: Github, behance: Palette, mail: Mail, whatsapp: MessageCircle } as const;
 
 // Entrada em cascata, de cima para baixo. Com "reduzir movimento", aparece direto.
@@ -35,84 +22,71 @@ function Reveal({ index, children }: { index: number; children: ReactNode }) {
   );
 }
 
-function Label({ children }: { children: ReactNode }) {
-  return <p className="font-label text-[13px] font-semibold uppercase tracking-[0.22em] text-mute">{children}</p>;
-}
+const TONE = {
+  violet: 'bg-violet text-white hover:bg-violet-soft',
+  gold: 'bg-gold text-black hover:bg-gold-soft',
+  dark: 'bg-white/[0.08] text-ink hover:bg-white/[0.14]',
+} as const;
 
-function StatusDot({ live }: { live: boolean }) {
-  return (
-    <span className="relative inline-flex size-2.5" aria-hidden="true">
-      {live ? <span className="absolute inset-0 animate-ping rounded-full bg-violet-soft opacity-60" /> : null}
-      <span className={`relative inline-flex size-2.5 rounded-full ${live ? 'bg-violet-soft' : 'bg-gold'}`} />
-    </span>
-  );
-}
-
-function StoreButton({ link, primary }: { link: StoreLink; primary: boolean }) {
-  const Icon = STORE_ICON[link.icon];
-  const base = 'hud flex min-h-14 w-full items-center gap-3 px-5 font-sans text-[15px] font-semibold transition-colors duration-200';
+// Uma opção do "menu" do card, como na tela de título de um jogo. Sem href fica desativada (ex.: iOS em revisão).
+function MenuButton({ link, tone }: { link: MenuLink; tone: keyof typeof TONE }) {
+  const Icon = MENU_ICON[link.icon];
+  const base = 'press flex min-h-12 items-center justify-center gap-2 px-3 text-[15px] font-semibold';
 
   if (!link.href) {
     return (
-      <div className={`${base} cursor-not-allowed bg-white/[0.04] text-mute`} aria-disabled="true">
-        <Icon className="size-5 shrink-0" aria-hidden="true" />
-        <span>{link.label}</span>
-        <span className="ml-auto font-mono text-[11px] uppercase tracking-wider">{link.note}</span>
+      <div className={`${base} cursor-not-allowed flex-col gap-0 bg-white/[0.04] text-mute`} aria-disabled="true">
+        <span className="flex items-center gap-2">
+          <Icon className="size-[18px] shrink-0" aria-hidden="true" />
+          {link.label}
+        </span>
+        <span className="text-[12px] font-medium leading-none">{link.note}</span>
       </div>
     );
   }
 
-  const tone = primary
-    ? 'bg-violet text-white hover:bg-violet-soft'
-    : 'bg-white/[0.06] text-ink hover:bg-white/[0.12]';
   return (
-    <a href={link.href} target="_blank" rel="noopener noreferrer" className={`${base} ${tone} cursor-pointer`}>
-      <Icon className="size-5 shrink-0" aria-hidden="true" />
-      <span>{link.label}</span>
-      <ArrowUpRight className="ml-auto size-4 shrink-0 opacity-70" aria-hidden="true" />
+    <a href={link.href} target="_blank" rel="noopener noreferrer" className={`${base} ${TONE[tone]} cursor-pointer`}>
+      <Icon className="size-[18px] shrink-0" aria-hidden="true" />
+      {link.label}
     </a>
   );
 }
 
 function TheSystemCard() {
   return (
-    <section aria-labelledby="the-system" className="hud-frame hud shadow-[0_0_60px_rgba(122,59,255,0.35)]">
-      <div className="hud relative overflow-hidden bg-card">
-        {/* Imagem baixa de propósito: os botões de download precisam caber na primeira dobra,
-            inclusive no navegador do Instagram (~650 px visíveis). */}
-        <div className="relative h-44 overflow-hidden bg-[radial-gradient(circle_at_70%_30%,rgba(122,59,255,0.45),transparent_60%)]">
-          <img
-            src={asset('img/the-system-app.webp')}
-            alt="Tela de progresso do The System, com sequência de dias e o mapa de atividade de cada pilar"
-            className="absolute right-6 top-4 w-28 rotate-[6deg] rounded-[18px] border-2 border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.7)]"
-            loading="eager"
-          />
+    <section aria-labelledby="the-system" className="frame-violet hud">
+      <div className="hud bg-card">
+        {/* A "tela de título": o mascote aponta para quem chega, o app ao lado. */}
+        <div className="relative h-40 overflow-hidden bg-violet">
           <img
             src={asset('img/mascote.webp')}
             alt=""
             aria-hidden="true"
-            className="absolute -bottom-2 left-2 h-44 drop-shadow-[0_18px_30px_rgba(0,0,0,0.75)]"
+            className="absolute -bottom-3 left-1 h-[172px]"
+            loading="eager"
           />
-          <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-card to-transparent" />
+          <img
+            src={asset('img/the-system-app.webp')}
+            alt="Tela de progresso do The System, com a sequência de dias e o mapa de atividade"
+            className="absolute right-5 top-4 w-[92px] rotate-[6deg] rounded-[14px] border-2 border-black/40"
+            loading="eager"
+          />
         </div>
 
-        <div className="space-y-3.5 px-5 pb-6 pt-1">
-          <div className="flex items-center gap-2">
-            <StatusDot live />
-            <Label>Projeto em destaque ♦ {THE_SYSTEM.status}</Label>
-          </div>
+        <div className="space-y-3 px-4 pb-4 pt-3">
           <div className="flex items-center gap-3">
-            <img src={asset('img/the-system-mark.webp')} alt="" aria-hidden="true" className="size-10" />
-            <h2 id="the-system" className="font-display text-[44px] uppercase leading-none tracking-tight">
+            <img src={asset('img/the-system-mark.webp')} alt="" aria-hidden="true" className="size-7" />
+            <h2 id="the-system" className="shrink-0 whitespace-nowrap font-display text-[30px] uppercase leading-none tracking-tight">
               {THE_SYSTEM.name}
             </h2>
+            <p className="ml-auto min-w-0 text-right text-[13px] leading-snug text-mute">{THE_SYSTEM.pitch}</p>
           </div>
-          <div className="space-y-2.5">
+          <div className="grid grid-cols-3 gap-2">
             {THE_SYSTEM.links.map((link, i) => (
-              <StoreButton key={link.label} link={link} primary={i === 0} />
+              <MenuButton key={link.label} link={link} tone={i === 0 ? 'violet' : 'dark'} />
             ))}
           </div>
-          <p className="pt-1 text-[15px] leading-relaxed text-mute">{THE_SYSTEM.pitch}</p>
         </div>
       </div>
     </section>
@@ -120,35 +94,31 @@ function TheSystemCard() {
 }
 
 function AdventoCard() {
+  const [support, gdd] = ADVENTO.links;
   return (
-    <section aria-labelledby="advento" className="hud-frame-muted hud">
-      <a href={ADVENTO.href} target="_blank" rel="noopener noreferrer" className="hud group block cursor-pointer bg-card">
+    <section aria-labelledby="advento" className="frame-gold hud">
+      <div className="hud bg-card">
         <div className="relative h-40 overflow-hidden">
           <img
             src={asset('img/advento-gameplay.webp')}
-            alt="Cena do Advento: a vila de Primórdia com o discípulo diante da grande árvore"
-            className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
+            alt="Cena do Advento: o Discípulo em Primórdia, diante da Árvore da Fé"
+            // Ampliada e subida para cortar o letreiro "Primórdia · Vila do Despertar" que já vem na captura.
+            className="absolute -top-10 left-1/2 w-[115%] max-w-none -translate-x-1/2"
+            loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
-          <img src={asset('img/advento-logo.webp')} alt="" aria-hidden="true" className="absolute bottom-2 left-1/2 w-52 -translate-x-1/2" />
-        </div>
-        <div className="space-y-3 px-5 pb-5 pt-3">
-          <div className="flex items-center gap-2">
-            <StatusDot live={false} />
-            <Label>{ADVENTO.status} ♦ MMORPG</Label>
-          </div>
-          <h2 id="advento" className="sr-only">
-            {ADVENTO.name}
+          {/* Véu escuro só sob a legenda da foto. taste-skill-ignore */}
+          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/85 to-transparent" />
+          <h2 id="advento" className="absolute -top-2 left-1/2 w-48 -translate-x-1/2">
+            <img src={asset('img/advento-logo.webp')} alt={ADVENTO.name} className="w-full" />
           </h2>
-          <p className="text-[15px] leading-relaxed text-mute">{ADVENTO.pitch}</p>
-          <span className="inline-flex min-h-12 items-center gap-2 font-sans text-[15px] font-semibold text-gold">
-            <BookOpen className="size-5" aria-hidden="true" />
-            {ADVENTO.cta}
-            <ArrowUpRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
-          </span>
+          <p className="absolute inset-x-0 bottom-2 text-center text-[13px] font-medium text-ink">{ADVENTO.pitch}</p>
         </div>
-      </a>
+
+        <div className="grid grid-cols-[1fr_auto] gap-2 px-4 pb-4 pt-3">
+          <MenuButton link={support} tone="gold" />
+          <MenuButton link={gdd} tone="dark" />
+        </div>
+      </div>
     </section>
   );
 }
@@ -159,32 +129,26 @@ function SocialLink({ social }: { social: Social }) {
   return (
     <a
       href={social.href}
+      aria-label={social.label}
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-      className="flex min-h-14 cursor-pointer flex-col items-center justify-center gap-1.5 rounded-sm border border-line bg-white/[0.03] px-2 py-3 text-mute transition-colors duration-200 hover:border-violet hover:text-ink"
+      className="press flex size-12 cursor-pointer items-center justify-center bg-white/[0.06] text-mute hover:bg-white/[0.12] hover:text-ink"
     >
       <Icon className="size-5" aria-hidden="true" />
-      <span className="font-label text-[11px] uppercase tracking-[0.16em]">{social.label}</span>
     </a>
   );
 }
 
 export default function App() {
   return (
-    <main className="relative mx-auto flex min-h-screen w-full max-w-[460px] flex-col gap-5 px-4 pb-10 pt-6">
+    <main className="mx-auto flex min-h-svh w-full max-w-[420px] flex-col gap-3 px-4 pb-10 pt-4">
       <Reveal index={0}>
-        {/* Cabeçalho numa linha só: deixa a primeira dobra para os botões do The System. */}
-        <header className="flex items-center gap-4">
-          <img
-            src={asset('img/losanjos-monogram.webp')}
-            alt="Monograma L.A da Losanjos Studios"
-            className="w-20 shrink-0 drop-shadow-[0_0_20px_rgba(122,59,255,0.55)]"
-          />
-          <div className="min-w-0 space-y-1">
-            <h1 className="font-display text-[28px] uppercase leading-tight tracking-tight">
-              <span className="highlight">{STUDIO.name}</span>
-            </h1>
-            <Label>{STUDIO.owner}</Label>
-          </div>
+        {/* Cabeçalho de uma linha: a primeira dobra é dos dois cards. */}
+        <header className="flex items-center gap-3">
+          <img src={asset('img/losanjos-monogram.webp')} alt="" aria-hidden="true" className="w-11 shrink-0" />
+          <h1 className="text-[15px] font-semibold leading-tight">
+            {STUDIO.name}
+            <span className="block text-[13px] font-normal text-mute">{STUDIO.owner}</span>
+          </h1>
         </header>
       </Reveal>
 
@@ -197,17 +161,14 @@ export default function App() {
       </Reveal>
 
       <Reveal index={3}>
-        <nav aria-label="Redes sociais e contato" className="space-y-3">
-          <Label>Me encontre</Label>
-          <div className="grid grid-cols-3 gap-2.5">
-            {SOCIALS.map((social) => (
-              <SocialLink key={social.label} social={social} />
-            ))}
-          </div>
+        <nav aria-label="Redes sociais e contato" className="flex justify-between pt-2">
+          {SOCIALS.map((social) => (
+            <SocialLink key={social.label} social={social} />
+          ))}
         </nav>
       </Reveal>
 
-      <footer className="pt-2 text-center font-mono text-[11px] uppercase tracking-wider text-mute/70">
+      <footer className="pt-3 text-center text-[12px] text-mute/70">
         © {new Date().getFullYear()} {STUDIO.name}
       </footer>
     </main>
