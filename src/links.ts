@@ -12,8 +12,7 @@ export const THE_SYSTEM = {
   pitch: 'Sua rotina vira um RPG.',
   links: [
     { label: 'Android', href: 'https://play.google.com/store/apps/details?id=com.thesystem.app', icon: 'play' },
-    // O iOS ainda está em revisão na Apple: o botão fica desativado até a aprovação.
-    { label: 'iOS', note: 'em breve', icon: 'apple' },
+    { label: 'iOS', href: 'https://apps.apple.com/br/app/the-system/id6819947961', icon: 'apple' },
     { label: 'Web', href: 'https://the-system-7q6.pages.dev/', icon: 'web' },
   ] satisfies MenuLink[],
 };
