@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>The System — baixe o app</title>
+  <meta name="description" content="Melhore seus hábitos. Baixe o The System na Google Play ou na App Store." />
+  <meta name="theme-color" content="#06040c" />
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The System — melhore seus hábitos" />
+  <meta property="og:description" content="Sua rotina vira um RPG. Baixe na Google Play ou na App Store." />
+  <meta property="og:image" content="https://wallaceanjos.github.io/about/img/the-system-download.jpg" />
+  <meta property="og:url" content="https://wallaceanjos.github.io/about/the-system/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preload" as="image" href="../img/the-system-download.webp" />
+  <style>
+    :root { color-scheme: dark; --bg: #06040c; --ring: #9b6bff; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--bg); }
+    body {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
+    /* A mesma arte, desfocada, preenche o que sobra em telas mais altas ou mais largas que 9:16. */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -40px;
+      background: url("../img/the-system-download.webp") center / cover no-repeat;
+      filter: blur(28px) brightness(0.45) saturate(1.2);
+      z-index: 0;
+    }
+    main {
+      position: relative;
+      z-index: 1;
+      width: min(100vw, calc(100svh * 941 / 1672));
+      aspect-ratio: 941 / 1672;
+    }
+    .art { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    /* Posição dos selos medida na arte de 941 x 1672 px. */
+    .store {
+      position: absolute;
+      top: calc(1252 / 1672 * 100%);
+      height: calc(107 / 1672 * 100%);
+      width: calc(357 / 941 * 100%);
+      display: block;
+      border-radius: 10px;
+      transition: transform 160ms cubic-bezier(0.22, 1, 0.36, 1), filter 160ms ease;
+    }
+    .store img { width: 100%; height: 100%; display: block; object-fit: contain; }
+    .store.play { left: calc(110 / 941 * 100%); }
+    .store.apple { left: calc(481 / 941 * 100%); }
+    .store:active { transform: scale(0.96); }
+    .store:focus-visible { outline: 3px solid var(--ring); outline-offset: 4px; }
+    @media (hover: hover) {
+      .store:hover { transform: translateY(-2px); filter: drop-shadow(0 6px 18px rgba(122, 59, 255, 0.55)); }
+    }
+    @media (prefers-reduced-motion: reduce) { .store { transition: none; } }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; overflow: hidden;
+      clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 class="sr-only">The System — melhore seus hábitos. Baixe agora.</h1>
+    <img class="art" src="../img/the-system-download.webp" width="941" height="1672"
+         alt="The System: o caçador de olhos violeta numa academia escura. Melhore seus hábitos. Baixe agora." />
+    <a class="store play" href="https://play.google.com/store/apps/details?id=com.thesystem.app"
+       target="_blank" rel="noopener noreferrer">
+      <img src="../img/badge-google-play.png" width="393" height="114" alt="Disponível no Google Play" />
+    </a>
+    <a class="store apple" href="https://apps.apple.com/br/app/the-system/id6819947961"
+       target="_blank" rel="noopener noreferrer">
+      <img src="../img/badge-app-store.png" width="394" height="114" alt="Baixar na App Store" />
+    </a>
+  </main>
+</body>
+</html>
