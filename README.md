@@ -4,7 +4,7 @@ Link-in-bio da Losanjos Studios, de Wallace dos Anjos: <https://wallaceanjos.git
 
 Dois cards cabem na primeira dobra (375×667), cada um como a tela de título de um jogo com o seu menu:
 
-- **The System** — o app que transforma a sua rotina num jogo: Android (Google Play), iOS (em breve) e web.
+- **The System** — o app que transforma a sua rotina num jogo: Android (Google Play) e iOS (App Store).
 - **Advento** — o MMORPG cristão em desenvolvimento: "Seja um colaborador" (a vaquinha) e o GDD.
 - Redes e contato numa fileira de ícones abaixo.
 

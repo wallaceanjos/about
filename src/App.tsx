@@ -1,11 +1,11 @@
 import type { ReactNode } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
-import { Apple, BookOpen, Github, Globe, HandHeart, Instagram, Linkedin, Mail, MessageCircle, Palette, Play } from 'lucide-react';
+import { Apple, BookOpen, Github, HandHeart, Instagram, Linkedin, Mail, MessageCircle, Palette, Play } from 'lucide-react';
 import { ADVENTO, SOCIALS, STUDIO, THE_SYSTEM, type MenuLink, type Social } from './links';
 
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
-const MENU_ICON = { play: Play, apple: Apple, web: Globe, heart: HandHeart, book: BookOpen } as const;
+const MENU_ICON = { play: Play, apple: Apple, heart: HandHeart, book: BookOpen } as const;
 const SOCIAL_ICON = { instagram: Instagram, linkedin: Linkedin, github: Github, behance: Palette, mail: Mail, whatsapp: MessageCircle } as const;
 
 // Entrada em cascata, de cima para baixo. Com "reduzir movimento", aparece direto.
@@ -82,7 +82,7 @@ function TheSystemCard() {
             </h2>
             <p className="ml-auto min-w-0 text-right text-[13px] leading-snug text-mute">{THE_SYSTEM.pitch}</p>
           </div>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-2 gap-2">
             {THE_SYSTEM.links.map((link, i) => (
               <MenuButton key={link.label} link={link} tone={i === 0 ? 'violet' : 'dark'} />
             ))}
